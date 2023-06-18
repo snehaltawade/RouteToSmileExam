@@ -13,7 +13,7 @@ const DisplayData = () => {
   return (
     <>  
       <h4>Product Data</h4>
-    {`length:"${length}`}
+    {`length: ${length}`}
       {productsDetails.map((product) => (
         
         <table style={{border:'1px solid black',display:'grid'}} className="table">

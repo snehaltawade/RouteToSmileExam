@@ -35,7 +35,7 @@ const dataReducer = (state =  initialState , action) => {
         newProducts.push(element)
       }
     });
-    return{ products: newProducts,length:state.length};
+    return{ products: newProducts,length:state.length-1};
   }
   return state;
   }
