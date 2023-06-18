@@ -1,26 +1,19 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const ProductForm = () => {
   const [data, setData] = useState({});
+  const dispatch= useDispatch();
   const onChangeHandler = (e) => {
     console.log(e);
     let key = e.target.name;
     let value = e.target.value;
     setData((prevData) => ({ ...prevData, [key]: value }));
   };
-  const onSubmitHandler = async (e) => {
+  const onSubmitHandler =  (e) => {
     e.preventDefault();
     console.log(data);
-    const response = await fetch("https://dummyjson.com/products", {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-    const result = await response.json();
-    console.log(result);
+    dispatch({type:'addData',data:data})
   };
   return (
     <>
@@ -39,7 +32,7 @@ const ProductForm = () => {
           <label>Description</label>
           <input
             type="text"
-            name="desc"
+            name="description"
             value={data.desc}
             onChange={onChangeHandler}
           ></input>

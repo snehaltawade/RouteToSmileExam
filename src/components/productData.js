@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import DisplayData from "./displayData";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 const ProductData = () => {
   const [data, setData] = useState({});
   const dispatch=useDispatch();
+  console.log("inside roductdata")
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((response) => {
@@ -14,14 +14,9 @@ const ProductData = () => {
       .then((res) => {
         console.log("-----",res);
         setData(res);
-        dispatch({type:'setData',data:res})
+        dispatch({type:'setData',data:res.products})
       });
   }, []);
 
-  return (
-    <div>
-      <DisplayData productDetails={data} />
-    </div>
-  );
 };
 export default ProductData;
