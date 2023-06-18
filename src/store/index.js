@@ -26,6 +26,17 @@ const dataReducer = (state =  initialState , action) => {
     console.log(action.data);
     return {products: [...state.products,{...action.data,id:'91'}],length:state.length+1};
   }
+  if(action.type=='delete'){
+    let products=state.products;
+    let newProducts=[];
+    products.forEach(element => {
+      if(element.id!=action.id){
+        console.log(element.id)
+        newProducts.push(element)
+      }
+    });
+    return{ products: newProducts,length:state.length};
+  }
   return state;
   }
   

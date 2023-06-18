@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 const DisplayData = () => {
   const productsDetails = useSelector((state) => state.products);
   const length=useSelector(state=>state.length)
+  const dispatch=useDispatch();
   console.log(productsDetails)
   const onDeleteHandler = (id) => {
+    dispatch({type:'delete',id:id})
     console.log(id, "data deleted");
   };
   return (
