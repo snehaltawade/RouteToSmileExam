@@ -17,7 +17,6 @@ const initialState = {
 const dataReducer = (state = { productsDetails: initialState }, action) => {
   console.log(state.productsDetails);
   if(action.type=='setData'){
-    console.log(action.data)
     return state.productsDetails=action.data;
   }
   return state;
