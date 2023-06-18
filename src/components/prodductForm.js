@@ -27,15 +27,6 @@ const ProductForm = () => {
       <form onSubmit={onSubmitHandler}>
         <h2>Product Form</h2>
         <div>
-          <label>Id</label>
-          <input
-            type="text"
-            name="title"
-            value={data.Id}
-            onChange={onChangeHandler}
-          ></input>
-        </div>
-        <div>
           <label>Title</label>
           <input
             type="text"
@@ -62,42 +53,7 @@ const ProductForm = () => {
             onChange={onChangeHandler}
           ></input>
         </div>
-        <div>
-          <label>discountPercentage</label>
-          <input
-            type="text"
-            name="discount"
-            value={data.discount}
-            onChange={onChangeHandler}
-          ></input>
-        </div>
-        <div>
-          <label>rating</label>
-          <input
-            type="text"
-            name="rating"
-            value={data.rating}
-            onChange={onChangeHandler}
-          ></input>
-        </div>
-        <div>
-          <label>stock</label>
-          <input
-            type="text"
-            name="stock"
-            value={data.stock}
-            onChange={onChangeHandler}
-          ></input>
-        </div>
-        <div>
-          <label>Category</label>
-          <input
-            type="text"
-            name="category"
-            value={data.category}
-            onChange={onChangeHandler}
-          ></input>
-        </div>
+
         <button type="submit">Submit</button>
       </form>
     </>
